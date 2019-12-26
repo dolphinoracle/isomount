@@ -500,7 +500,7 @@ do_sq_mount() {
     local data=$1  file
     while read file; do
         [ -z "$file" ] && continue
-        any_mount "$SQ_NAME" "$file" -o loop,user,ro,exec -t squashfs
+        any_mount "$SQ_NAME" "$file" -o loop,user,ro,exec,x-gvfs-show -t squashfs
     done <<Do_Sq_Mount
 $(echo -e "$data")
 Do_Sq_Mount
